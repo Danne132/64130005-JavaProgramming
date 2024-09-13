@@ -11,8 +11,8 @@ public class HelloWordApp {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		// In dòng chữ "Hello Word"
+		System.out.println("Hello world");
 	}
 
 }
