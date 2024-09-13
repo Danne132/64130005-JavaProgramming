@@ -8,10 +8,29 @@ public class MainApp {
 		
 		// Nhập chiều cao và cân nặng
 		Scanner nhap = new Scanner(System.in);
-		System.out.print("Nhập vào chiều cao của bạn(m): ");
-		height = nhap.nextFloat();
-		System.out.print("Nhập vào cân nặng của bạn(kg): ");
-		weight = nhap.nextFloat();
+		while(true){
+			try {
+				System.out.print("Nhập vào chiều cao của bạn(m): ");
+				height = nhap.nextFloat();
+				if(height >= 1f && height <= 2.2f) {
+					break;
+				}
+			} catch (Exception e) {
+				System.out.println("Hãy nhập vào một số");
+			}
+		}
+		
+		while(true) {
+			try {
+				System.out.print("Nhập vào cân nặng của bạn(kg): ");
+				weight = nhap.nextFloat();
+				if(weight > 0 && weight <= 200) {
+					break;
+				}
+			} catch (Exception e) {
+				System.out.print("Hãy nhập vào một số");
+			}
+		}
 		
 		// Tính chỉ số BMI
 		BMI = weight / (height*height);
