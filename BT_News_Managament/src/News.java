@@ -14,7 +14,7 @@ public class News implements INews{
         RateList = new ArrayList<>();
     }
 
-    // Getters and Setters for all properties except AverageRate (only getter for AverageRate)
+
     public int getID() {
         return ID;
     }
@@ -59,7 +59,6 @@ public class News implements INews{
         return AverageRate;
     }
 
-    // Method to display news information
     @Override
     public void Display() {
         System.out.println("Title: " + Title);
@@ -69,7 +68,7 @@ public class News implements INews{
         System.out.println("Average Rate: " + AverageRate);
     }
 
-    // Method to calculate the average rate from RateList
+  
     public void Calculate() {
         int sum = 0;
         for (int rate : RateList) {
@@ -78,7 +77,6 @@ public class News implements INews{
         AverageRate = sum / RateList.size();
     }
 
-    // Method to add rates to RateList
     public void addRate(int rate) {
         RateList.add(rate);
     }

@@ -19,7 +19,7 @@ public class ManageNews {
             System.out.println("4. Exit");
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
-            scanner.nextLine(); // consume newline character
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1:
@@ -64,7 +64,6 @@ public class ManageNews {
         newsList.add(news);
     }
 
-    // Method to display all news
     private void viewNews() {
         for (News news : newsList) {
             news.Display();
@@ -72,7 +71,6 @@ public class ManageNews {
         }
     }
 
-    // Method to calculate and display average rate
     private void averageRate(Scanner scanner) {
         for (News news : newsList) {
             news.Calculate();
