@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bmi1.BMI">
+   <children>
+      <Label layoutX="199.0" layoutY="32.0" text="BMI Calculator" textFill="#6447ff">
+         <font>
+            <Font name="System Bold Italic" size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="99.0" layoutY="96.0" text="Chiều cao">
+         <font>
+            <Font name="System Italic" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txt_H" layoutX="226.0" layoutY="101.0" />
+      <Label layoutX="97.0" layoutY="140.0" text="Cân nặng">
+         <font>
+            <Font name="System Italic" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txt_W" layoutX="226.0" layoutY="145.0" />
+      <Label layoutX="159.0" layoutY="182.0" text="BMI">
+         <font>
+            <Font name="System Italic" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txt_BMI" editable="false" layoutX="226.0" layoutY="187.0" />
+      <Label layoutX="103.0" layoutY="230.0" text="Nhận xét">
+         <font>
+            <Font name="System Italic" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txt_E" editable="false" layoutX="226.0" layoutY="235.0" />
+      <Button fx:id="btn_cal" layoutX="275.0" layoutY="282.0" mnemonicParsing="false" onAction="#tinhBMI" text="Tính" />
+   </children>
+</AnchorPane>
