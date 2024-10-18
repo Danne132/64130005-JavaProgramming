@@ -7,7 +7,7 @@ public class MainApp {
 		HashMap<String, String> dicHashMap = new HashMap<String, String>();
 		dicHashMap.put("hello", "xin chào");
         dicHashMap.put("goodbye", "tạm biệt");
-        dicHashMap.put("thanks", "cảm ơn");
+        dicHashMap.put("thank you", "cảm ơn");
         dicHashMap.put("please", "làm ơn");
         dicHashMap.put("sorry", "xin lỗi");
         dicHashMap.put("yes", "vâng");
