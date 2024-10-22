@@ -4,12 +4,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.caro.CaroController">
    <children>
-      <FlowPane layoutX="194.0" layoutY="95.0" prefHeight="215.0" prefWidth="215.0">
+      <FlowPane layoutX="183.0" layoutY="85.0" prefHeight="230.0" prefWidth="233.0" style="-fx-background-color: pink; -fx-alignment: center;">
          <children>
             <Button fx:id="btn1" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" />
             <Button fx:id="btn2" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" />
@@ -22,7 +22,10 @@
             <Button fx:id="btn9" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" />
          </children>
       </FlowPane>
-      <Label layoutX="250.0" layoutY="323.0" prefHeight="39.0" prefWidth="102.0" text="Label" />
-      <Text layoutX="289.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="CARO" />
+      <Label fx:id="txtThongBao" layoutX="238.0" layoutY="335.0" prefHeight="39.0" prefWidth="123.0" style="-fx-border-color: black; -fx-alignment: center;" textAlignment="CENTER" />
+      <Text layoutX="262.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="CARO">
+         <font>
+            <Font name="System Bold Italic" size="28.0" />
+         </font></Text>
    </children>
 </AnchorPane>
