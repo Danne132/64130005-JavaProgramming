@@ -9,13 +9,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bt.duyan.demosql.demoSQLController">
    <children>
       <TableView fx:id="tableView" layoutX="-1.0" layoutY="184.0" prefHeight="218.0" prefWidth="600.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="id" prefWidth="50.39996260404587" text="Id" />
+          <TableColumn fx:id="tenSP" prefWidth="224.79997634887695" text="Tên sản phẩm" />
+            <TableColumn fx:id="donGia" minWidth="9.60003662109375" prefWidth="96.79998779296875" text="Đơn giá" />
+            <TableColumn fx:id="moTa" prefWidth="228.00006103515625" text="Mô tả" />
         </columns>
       </TableView>
       <Text fill="#36b5b9" layoutX="206.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THÊM HÀNG HÓA" textAlignment="CENTER">
