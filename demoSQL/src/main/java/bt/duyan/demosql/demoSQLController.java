@@ -2,13 +2,14 @@ package bt.duyan.demosql;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.w3c.dom.Text;
 
 import java.sql.*;
+import java.util.EventListener;
 
 public class demoSQLController {
     @FXML
@@ -22,13 +23,17 @@ public class demoSQLController {
     TableColumn<SanPham, Double> donGia;
     @FXML
     TableColumn<SanPham, String> moTa;
+    @FXML
+    TextField txtTenSP, txtGiaSP, txtMoTa;
+    @FXML
+    Button btnThemSP;
     //Cập nhật giao diện khi dữ liệu thay đổi
     private ObservableList<SanPham> data;
     Connection conn;
 
     public void initialize() {
         id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        tenSP.setCellValueFactory(new PropertyValueFactory<>("tenSP"));
+        tenSP.setCellValueFactory(new PropertyValueFactory<>("tenSp"));
         donGia.setCellValueFactory(new PropertyValueFactory<>("donGia"));
         moTa.setCellValueFactory(new PropertyValueFactory<>("moTa"));
         connectDTB();
@@ -49,7 +54,6 @@ public class demoSQLController {
 
     void getData(){
         data = FXCollections.observableArrayList();
-        connectDTB();
         //Lấy dữ liệu từ bảng sanpham trong database
         String sqlSelect = "select * from sanpham";
         Statement lenh  = null;
@@ -66,7 +70,71 @@ public class demoSQLController {
         } catch (SQLException e) {
             System.out.println("Lỗi");
         }
-
     }
 
+    @FXML
+    void addSP(ActionEvent event){
+        String tenSP = String.valueOf(txtTenSP.getText());
+        String moTa = String.valueOf(txtMoTa.getText());
+        double giaSP;
+
+        // Kiểm tra và chuyển đổi giá trị nhập liệu
+        try {
+            giaSP = Double.parseDouble(txtGiaSP.getText());
+        } catch (NumberFormatException e) {
+            System.out.println("Lỗi: Giá sản phẩm không hợp lệ!");
+            return;
+        }
+
+        // Tạo đối tượng sản phẩm mới
+        SanPham sp = new SanPham();
+        sp.setTenSp(tenSP);
+        sp.setDonGia(giaSP);
+        sp.setMoTa(moTa);
+
+        // Câu lệnh SQL thêm dữ liệu vào bảng
+        String sqlInsert = "INSERT INTO `sanpham`(`TenSP`, `GiaSP`, `MoTa`) VALUES (?,?,?)";
+
+        PreparedStatement statement = null;
+
+        try {
+            // Kiểm tra kết nối
+            if (conn == null || conn.isClosed()) {
+                System.out.println("Lỗi: Kết nối cơ sở dữ liệu không thành công.");
+                return;
+            }
+
+            // Tạo PreparedStatement và gán giá trị
+            statement = conn.prepareStatement(sqlInsert);
+            statement.setString(1, tenSP);
+            statement.setDouble(2, giaSP);
+            statement.setString(3, moTa);
+
+            // Thực hiện câu lệnh thêm dữ liệu
+            int rowsInserted = statement.executeUpdate();  // Thực thi câu lệnh
+
+            // Kiểm tra xem có bao nhiêu hàng bị ảnh hưởng
+            if (rowsInserted > 0) {
+                System.out.println("Thêm sản phẩm thành công");
+            } else {
+                System.out.println("Không thể thêm sản phẩm.");
+            }
+
+            // Lấy dữ liệu mới từ database và cập nhật TableView
+            getData();
+
+        } catch (SQLException e) {
+            System.out.println("Lỗi khi thêm sản phẩm");
+            e.printStackTrace();
+        } finally {
+            // Đóng PreparedStatement
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 }

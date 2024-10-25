@@ -1,11 +1,15 @@
 package bt.duyan.demosql;
 
 public class SanPham {
-    private String tenSp, moTa;
+    private String tenSp;
+    private String moTa;
     private double donGia;
     private int id;
 
-    public SanPham(int id,String tenSp, String moTa, double donGia) {
+    public SanPham() {
+    }
+
+    public SanPham(int id, String tenSp, String moTa, double donGia) {
         this.id = id;
         this.tenSp = tenSp;
         this.moTa = moTa;

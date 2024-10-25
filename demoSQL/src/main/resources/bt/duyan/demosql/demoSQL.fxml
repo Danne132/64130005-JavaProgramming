@@ -44,7 +44,7 @@
                </font>
             </Text>
             <TextField fx:id="txtMoTa" layoutX="103.0" layoutY="56.0" prefHeight="25.0" prefWidth="383.0" />
-            <Button layoutX="226.0" layoutY="91.0" mnemonicParsing="false" text="Thêm" />
+            <Button fx:id="btnThemSP" layoutX="226.0" layoutY="91.0" mnemonicParsing="false" onAction="#addSP" text="Thêm" />
          </children>
       </Pane>
    </children>
