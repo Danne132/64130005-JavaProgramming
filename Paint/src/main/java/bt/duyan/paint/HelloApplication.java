@@ -23,6 +23,11 @@ public class HelloApplication extends Application {
         gc.strokeLine(0,0, 0, 400);
         gc.strokeLine(0,0, 400, 0);
 
+        // Vẽ Hình tròn to
+        gc.setStroke(Color.BLACK);
+        gc.strokeOval(150, 150, 100, 100);
+
+
         // Thêm Canvas vào Scene
         Group root = new Group(canvas);
         Scene scene = new Scene(root, 400, 400);
