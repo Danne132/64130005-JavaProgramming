@@ -23,9 +23,15 @@ public class HelloApplication extends Application {
         gc.strokeLine(0,0, 0, 400);
         gc.strokeLine(0,0, 400, 0);
 
+        gc.setLineWidth(2);
         // Vẽ Hình tròn to
         gc.setStroke(Color.BLACK);
         gc.strokeOval(150, 150, 100, 100);
+
+        // Vẽ Hình tam giác
+        gc.setFill(Color.WHITE);
+        double[] X_position = {100, 340, 220};
+        double[ơ]
 
 
         // Thêm Canvas vào Scene
