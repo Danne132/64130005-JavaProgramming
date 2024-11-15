@@ -53,6 +53,12 @@ public class HelloApplication extends Application {
         double[] Y_position_smallTriangleRight = {90, 130, 115};
         gc.strokePolygon(X_position_smallTriangleRight, Y_position_smallTriangleRight, 3);
 
+        //Vẽ hình tam giác đỏ bên trong
+        double[] X_position_red = {180, 220, 200};
+        double[] Y_position_red = {140, 140, 160};
+        gc.setStroke(Color.RED);
+        gc.strokePolygon(X_position_red, Y_position_red, 3);
+
         // Thêm Canvas vào Scene
         Group root = new Group(canvas);
         Scene scene = new Scene(root, 400, 400);
