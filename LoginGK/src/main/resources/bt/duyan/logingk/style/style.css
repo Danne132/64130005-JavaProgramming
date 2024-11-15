@@ -1,0 +1,28 @@
+.background {
+    -fx-background-color: #4A90E2; /* Màu nền */
+}
+
+.text-field {
+    -fx-background-color: #ffffff; /* Màu nền của trường nhập */
+    -fx-border-color: #B0BEC5; /* Màu viền của trường nhập */
+    -fx-border-radius: 5; /* Bo tròn viền */
+}
+
+.text-field:focused {
+    -fx-border-color: #1E88E5; /* Màu viền khi có focus */
+}
+
+.login-button {
+    -fx-background-color: #ffffff; /* Màu nền của nút */
+    -fx-text-fill: #4A90E2; /* Màu chữ trên nút */
+    -fx-font-weight: bold; /* Chữ in đậm */
+    -fx-background-radius: 5; /* Bo tròn nút */
+}
+
+.login-button:hover {
+    -fx-background-color: #E3F2FD; /* Màu nền khi hover */
+}
+
+.notification {
+    -fx-text-fill: #FF5252; /* Màu chữ thông báo */
+}
