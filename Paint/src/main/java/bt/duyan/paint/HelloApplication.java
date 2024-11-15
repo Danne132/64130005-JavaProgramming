@@ -2,7 +2,11 @@ package bt.duyan.paint;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -10,9 +14,19 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        // Tạo Canvas để vẽ
+        Canvas canvas = new Canvas(400, 400);
+        GraphicsContext gc = canvas.getGraphicsContext2D();
+
+        gc.setStroke(Color.RED);
+        gc.setLineWidth(3);
+        gc.strokeLine(0,0, 0, 400);
+        gc.strokeLine(0,0, 400, 0);
+
+        // Thêm Canvas vào Scene
+        Group root = new Group(canvas);
+        Scene scene = new Scene(root, 400, 400);
+        stage.setTitle("BT vẽ hình bằng JavaFX");
         stage.setScene(scene);
         stage.show();
     }
