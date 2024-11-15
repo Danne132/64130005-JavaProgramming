@@ -63,6 +63,9 @@ public class HelloApplication extends Application {
         //đường cong bên trái
         gc.strokeArc(160, 240, 5, 10, 90, 160, javafx.scene.shape.ArcType.OPEN);
         gc.strokeArc(170, 240, 5, 10, 90, -160, javafx.scene.shape.ArcType.OPEN);
+        //Đường cong bên phải
+        gc.strokeArc(225, 240, 5, 10, 90, 160, javafx.scene.shape.ArcType.OPEN);
+        gc.strokeArc(235, 240, 5, 10, 90, -160, javafx.scene.shape.ArcType.OPEN);
 
         // Thêm Canvas vào Scene
         Group root = new Group(canvas);
