@@ -16,11 +16,6 @@ public class PaintController {
         GraphicsContext gc = canvas.getGraphicsContext2D();
         // Xóa nội dung cũ trước khi vẽ
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
-        gc.setStroke(Color.RED);
-        gc.setLineWidth(3);
-        gc.strokeLine(0,0, 0, 400);
-        gc.strokeLine(0,0, 400, 0);
-
         gc.setLineWidth(2);
         // Vẽ Hình tròn to
         gc.setStroke(Color.BLACK);
