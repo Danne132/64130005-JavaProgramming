@@ -5,6 +5,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
 public class PaintController {
@@ -12,6 +13,13 @@ public class PaintController {
     private Button btnVehinh, btnVeChuot;
     @FXML
     private Canvas canvas;
+    private double lastX, lastY;
+    GraphicsContext gc;
+    @FXML
+    public void initialize(){
+
+    }
+
     public void veHinh(){
         GraphicsContext gc = canvas.getGraphicsContext2D();
         // Xóa nội dung cũ trước khi vẽ
@@ -62,6 +70,27 @@ public class PaintController {
     }
 
     public void veChuot(){
+        gc = canvas.getGraphicsContext2D();
+        gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+        canvas.setOnMousePressed(event -> {
+            lastX = event.getX();
+            lastY = event.getY();
+        });
 
+        // Bắt sự kiện kéo chuột để vẽ
+        canvas.setOnMouseDragged(event -> drawLine(gc, event));
+    }
+
+    private void drawLine(GraphicsContext gc, MouseEvent event) {
+
+        double x = event.getX();
+        double y = event.getY();
+
+        // Vẽ đường thẳng từ điểm trước đó đến điểm hiện tại
+        gc.strokeLine(lastX, lastY, x, y);
+
+        // Cập nhật lại tọa độ cuối cùng
+        lastX = x;
+        lastY = y;
     }
 }
