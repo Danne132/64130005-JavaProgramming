@@ -1,5 +1,6 @@
 package bt.duyan.paint;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -14,14 +15,28 @@ public class PaintController {
     @FXML
     private Canvas canvas;
     private double lastX, lastY;
+    private boolean isDrawingMode = false;
     GraphicsContext gc;
     @FXML
     public void initialize(){
+        gc = canvas.getGraphicsContext2D();
+        // Bắt sự kiện nhấn chuột (chỉ khi chế độ vẽ được kích hoạt)
+        canvas.setOnMousePressed(event -> {
+            if (isDrawingMode) {
+                lastX = event.getX();
+                lastY = event.getY();
+            }
+        });
 
+        // Bắt sự kiện kéo chuột để vẽ (chỉ khi chế độ vẽ được kích hoạt)
+        canvas.setOnMouseDragged(event -> {
+            if (isDrawingMode) {
+                drawLine(gc, event);
+            }
+        });
     }
 
-    public void veHinh(){
-        GraphicsContext gc = canvas.getGraphicsContext2D();
+    public void veHinh(ActionEvent event){
         // Xóa nội dung cũ trước khi vẽ
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
         gc.setLineWidth(2);
@@ -69,20 +84,24 @@ public class PaintController {
         gc.strokeArc(235, 240, 5, 10, 90, -160, javafx.scene.shape.ArcType.OPEN);
     }
 
-    public void veChuot(){
-        gc = canvas.getGraphicsContext2D();
+    @FXML
+    public void veChuot(ActionEvent event) {
+        // Xóa nội dung canvas trước khi vẽ
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
-        canvas.setOnMousePressed(event -> {
-            lastX = event.getX();
-            lastY = event.getY();
-        });
 
-        // Bắt sự kiện kéo chuột để vẽ
-        canvas.setOnMouseDragged(event -> drawLine(gc, event));
+        // Bật hoặc tắt chế độ vẽ
+        isDrawingMode = !isDrawingMode;
+
+        // Cập nhật nút khi bật hoặc tắt chế độ vẽ
+        if (isDrawingMode) {
+            btnVeChuot.setText("Tắt chế độ vẽ");
+        } else {
+            btnVeChuot.setText("Bật chế độ vẽ");
+        }
     }
 
+    // Phương thức để vẽ đường thẳng
     private void drawLine(GraphicsContext gc, MouseEvent event) {
-
         double x = event.getX();
         double y = event.getY();
 
