@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9affbc84-bd16-4314-8447-5d2d426bc046" name="Changes" comment="" />
+    <list default="true" id="9affbc84-bd16-4314-8447-5d2d426bc046" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../phepTinhGiuaKy/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../phepTinhGiuaKy/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../phepTinhGiuaKy/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../phepTinhGiuaKy/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/caro/CaroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/caro/CaroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DemoBanHang/src/main/java/bt/duyan/demobanhang/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DemoBanHang/src/main/java/bt/duyan/demobanhang/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FX_maven/src/main/java/com/example/fx_maven/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FX_maven/src/main/java/com/example/fx_maven/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pokemon/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Pokemon/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pokemon/src/main/java/bt/duyan/pokemon/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Pokemon/src/main/java/bt/duyan/pokemon/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pokemon/src/main/java/bt/duyan/pokemon/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pokemon/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Pokemon/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pokemon/src/main/resources/bt/duyan/pokemon/hello-view.fxml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,5 +69,16 @@
       <updated>1729229131525</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/caro/CaroController.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

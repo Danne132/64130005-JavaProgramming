@@ -52,11 +52,11 @@ public class CaroController implements Initializable {
         }
     }
 
-    void stop(){
-        for(var btn:btns){
-            btn.setDisable(true);
+        void stop(){
+            for(var btn:btns){
+                btn.setDisable(true);
+            }
         }
-    }
 
     void checkGameover(){
         for(int i = 0; i < 8; i++){
