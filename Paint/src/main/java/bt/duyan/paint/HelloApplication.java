@@ -43,6 +43,12 @@ public class HelloApplication extends Application {
         gc.fillOval(215, 225, 30, 30);
         gc.strokeOval(215, 225, 30, 30);
 
+        //Vẽ 2 hình tam giác nhỏ
+        //Hình tam giác trái
+        double[] X_position_smallTriangleLeft = {160, 160, 180};
+        double[] Y_position_smallTriangleLeft = {90, 130, 110};
+        gc.strokePolygon(X_position_smallTriangleLeft, Y_position_smallTriangleLeft, 3);
+
         // Thêm Canvas vào Scene
         Group root = new Group(canvas);
         Scene scene = new Scene(root, 400, 400);
