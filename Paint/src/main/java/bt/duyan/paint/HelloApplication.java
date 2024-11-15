@@ -30,9 +30,18 @@ public class HelloApplication extends Application {
 
         // Vẽ Hình tam giác
         gc.setFill(Color.WHITE);
-        double[] X_position = {100, 340, 220};
-        double[ơ]
+        double[] X_position = {100, 300, 200};
+        double[] Y_position = {180, 180, 100};
+        gc.fillPolygon(X_position, Y_position, 3);
+        gc.strokePolygon(X_position,Y_position, 3);
 
+        //Vẽ 2 hình tròn nhỏ
+        //Hình tròn trái
+        gc.fillOval(155, 225, 30, 30);
+        gc.strokeOval(155, 225, 30, 30);
+        //Hình tròn phải
+        gc.fillOval(215, 225, 30, 30);
+        gc.strokeOval(215, 225, 30, 30);
 
         // Thêm Canvas vào Scene
         Group root = new Group(canvas);
