@@ -31,7 +31,7 @@ public class PaintController {
         // Bắt sự kiện kéo chuột để vẽ (chỉ khi chế độ vẽ được kích hoạt)
         canvas.setOnMouseDragged(event -> {
             if (isDrawingMode) {
-                drawLine(gc, event);
+                drawLine(event);
             }
         });
     }
@@ -101,11 +101,13 @@ public class PaintController {
     }
 
     // Phương thức để vẽ đường thẳng
-    private void drawLine(GraphicsContext gc, MouseEvent event) {
+    private void drawLine(MouseEvent event) {
         double x = event.getX();
         double y = event.getY();
 
         // Vẽ đường thẳng từ điểm trước đó đến điểm hiện tại
+        gc.setStroke(Color.BLUE);
+        gc.setLineWidth(2);
         gc.strokeLine(lastX, lastY, x, y);
 
         // Cập nhật lại tọa độ cuối cùng
