@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="348.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thi.duyan.bai3.HelloController">
+   <children>
+      <Pane prefHeight="72.0" prefWidth="348.0">
+         <children>
+            <TextField fx:id="txtPoint" editable="false" layoutX="25.0" layoutY="23.0" prefHeight="37.0" prefWidth="45.0" />
+            <TextField fx:id="txtTime" editable="false" layoutX="289.0" layoutY="23.0" prefHeight="37.0" prefWidth="45.0" />
+         </children>
+      </Pane>
+      <Button fx:id="btnAsk" layoutX="31.0" layoutY="106.0" mnemonicParsing="false" onAction="#ask" prefHeight="55.0" prefWidth="70.0" text="Gen Quiz" />
+      <TextField fx:id="txtA" editable="false" layoutX="118.0" layoutY="120.0" prefHeight="26.0" prefWidth="55.0" />
+      <TextField fx:id="txtB" editable="false" layoutX="193.0" layoutY="120.0" prefHeight="26.0" prefWidth="55.0" />
+      <TextField fx:id="txtPT" editable="false" layoutX="270.0" layoutY="120.0" prefHeight="26.0" prefWidth="55.0" />
+      <Text layoutX="139.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Text>
+      <Text layoutX="214.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="B">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Text>
+      <Text layoutX="264.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phép tính">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Button fx:id="btn1" layoutX="35.0" layoutY="187.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="286.0" />
+      <Button fx:id="btn2" layoutX="35.0" layoutY="234.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="286.0" />
+      <Button fx:id="btn3" layoutX="35.0" layoutY="286.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="286.0" />
+      <Button fx:id="btn4" layoutX="35.0" layoutY="338.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="286.0" />
+   </children>
+</AnchorPane>
