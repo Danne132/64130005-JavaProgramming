@@ -59,6 +59,9 @@ public class HelloApplication extends Application {
         gc.setStroke(Color.RED);
         gc.strokePolygon(X_position_red, Y_position_red, 3);
 
+        //Vẽ đường cong nhỏ màu đỏ
+        gc.strokeArc(160, 280, 40, 20, 0, -180, javafx.scene.shape.ArcType.OPEN);
+
         // Thêm Canvas vào Scene
         Group root = new Group(canvas);
         Scene scene = new Scene(root, 400, 400);
