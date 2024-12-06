@@ -19,7 +19,7 @@ public class QuizController implements Initializable {
     @FXML
     Button btnC1, btnC2, btnC3, btnC4, btnC5, btnC6, btnC7, btnC8, btnC9, btnC10;
     List<Button> bnsQ;
-
+    
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

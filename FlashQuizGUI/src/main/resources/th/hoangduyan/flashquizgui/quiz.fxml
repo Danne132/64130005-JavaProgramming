@@ -139,12 +139,12 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" style="-fx-background-radius: 100%; -fx-background-color: #F46C00; -fx-pref-width: 60px; -fx-pref-height: 60px;" text="D" textFill="WHITE" GridPane.rowIndex="3">
+                  <Button mnemonicParsing="false" style="-fx-background-radius: 100%; -fx-background-color: #FF9415; -fx-pref-width: 60px; -fx-pref-height: 60px;" text="D" textFill="WHITE" GridPane.rowIndex="3">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="58.0" prefWidth="499.0" style="-fx-background-color: #F46C00; -fx-background-radius: 10px;" text="Phương án D" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <Button mnemonicParsing="false" prefHeight="58.0" prefWidth="499.0" style="-fx-background-color: #FF9415; -fx-background-radius: 10px;" text="Phương án D" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
