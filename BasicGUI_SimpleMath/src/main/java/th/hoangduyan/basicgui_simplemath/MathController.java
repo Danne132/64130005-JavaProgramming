@@ -43,7 +43,6 @@ public class MathController implements Initializable {
         }
 
         txtKQ.setText(String.valueOf(ketQua));
-
     }
 
 
