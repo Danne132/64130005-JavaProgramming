@@ -25,6 +25,7 @@ public class QuizController implements Initializable {
     List<Button> btnAnswerLetter;
     List<Button> btnAnswer;
     List<Question> questions;
+    int currentQuestion = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -32,6 +33,11 @@ public class QuizController implements Initializable {
         btnAnswerLetter = new ArrayList<>(Arrays.asList(btnA, btnB, btnC, btnD));
         btnAnswer = new ArrayList<>(Arrays.asList(btnaA, btnaB, btnaC, btnaD));
         initialQuestion();
+        setupButtonQuestion();
+        setupButtonAnswer();
+    }
+
+    private void setupButtonQuestion(){
         for(int i = 0; i < btnsQ.size(); i++){
             int finalI = i;
             btnsQ.get(i).setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -45,14 +51,22 @@ public class QuizController implements Initializable {
                 }
             });
         }
+    }
+
+    private void setupButtonAnswer(){
         for(int i = 0; i < btnAnswer.size(); i++){
             int finalI = i;
             btnAnswer.get(i).setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent mouseEvent) {
                     resetButtonAnserColor();
-                    btnAnswer.get(finalI).setStyle("-fx-background-color: #F46C00; -fx-background-radius: 10px;");
-                    btnAnswerLetter.get(finalI).setStyle("-fx-background-color:#F46C00; -fx-background-radius: 100%; -fx-pref-width: 60px; -fx-pref-height: 60px");
+                    if(checkAnswer(finalI)){
+                        btnAnswer.get(finalI).setStyle("-fx-background-color: #afef8f; -fx-background-radius: 10px;");
+                        btnAnswerLetter.get(finalI).setStyle("-fx-background-color:#afef8f; -fx-background-radius: 100%; -fx-pref-width: 60px; -fx-pref-height: 60px");
+                    }else{
+                        btnAnswer.get(finalI).setStyle("-fx-background-color: #afef8f; -fx-background-radius: 10px;");
+                        btnAnswerLetter.get(finalI).setStyle("-fx-background-color:#afef8f; -fx-background-radius: 100%; -fx-pref-width: 60px; -fx-pref-height: 60px");
+                    }
                 }
             });
         }
@@ -90,5 +104,11 @@ public class QuizController implements Initializable {
             btnAnswer.get(i).setStyle("-fx-background-color: #FF9415; -fx-background-radius: 10px;");
             btnAnswerLetter.get(i).setStyle("-fx-background-color:#FF9415; -fx-background-radius: 100%; -fx-pref-width: 60px; -fx-pref-height: 60px");
         }
+    }
+
+    private boolean checkAnswer(int index){
+        if(btnAnswer.get(index).getText() == questions.get(currentQuestion).getCorrectAnswer())
+            return true;
+        return false;
     }
 }
