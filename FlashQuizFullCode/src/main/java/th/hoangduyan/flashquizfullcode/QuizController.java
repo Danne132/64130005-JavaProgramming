@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
@@ -17,14 +18,17 @@ import java.util.ResourceBundle;
 public class QuizController implements Initializable {
     @FXML
     Button btnC1, btnC2, btnC3, btnC4, btnC5, btnC6, btnC7, btnC8, btnC9, btnC10;
-    List<Button> btnsQ;
     @FXML
     Button btnA, btnB, btnC, btnD, btnaA, btnaB, btnaC, btnaD;
     @FXML
     TextArea questionBoard;
+    @FXML
+    TextField point;
+    List<Button> btnsQ;
     List<Button> btnAnswerLetter;
     List<Button> btnAnswer;
     List<Question> questions;
+    int score = 0;
     int currentQuestion = 0;
 
     @Override
@@ -32,6 +36,7 @@ public class QuizController implements Initializable {
         btnsQ =new ArrayList<>(Arrays.asList(btnC1, btnC2, btnC3, btnC4, btnC5, btnC6, btnC7, btnC8, btnC9, btnC10));
         btnAnswerLetter = new ArrayList<>(Arrays.asList(btnA, btnB, btnC, btnD));
         btnAnswer = new ArrayList<>(Arrays.asList(btnaA, btnaB, btnaC, btnaD));
+        point.setDisable(true);
         initialQuestion();
         setupButtonQuestion();
         setupButtonAnswer();
@@ -45,9 +50,11 @@ public class QuizController implements Initializable {
                 public void handle(MouseEvent mouseEvent) {
                     resetButtonAnserColor();
                     resetButtonQuestionColors();
+                    btnsQ.get(finalI).setDisable(false);
                     btnsQ.get(finalI).setStyle("-fx-background-color: #F46C00; -fx-background-radius: 10px;");
                     questionBoard.setText(questions.get(finalI).getQuestion());
                     getAnswer(finalI);
+                    currentQuestion = finalI;
                 }
             });
         }
@@ -63,10 +70,13 @@ public class QuizController implements Initializable {
                     if(checkAnswer(finalI)){
                         btnAnswer.get(finalI).setStyle("-fx-background-color: #afef8f; -fx-background-radius: 10px;");
                         btnAnswerLetter.get(finalI).setStyle("-fx-background-color:#afef8f; -fx-background-radius: 100%; -fx-pref-width: 60px; -fx-pref-height: 60px");
+                        score++;
+                        point.setText(String.valueOf(score));
                     }else{
-                        btnAnswer.get(finalI).setStyle("-fx-background-color: #afef8f; -fx-background-radius: 10px;");
-                        btnAnswerLetter.get(finalI).setStyle("-fx-background-color:#afef8f; -fx-background-radius: 100%; -fx-pref-width: 60px; -fx-pref-height: 60px");
+                        btnAnswer.get(finalI).setStyle("-fx-background-color: #f34624; -fx-background-radius: 10px;");
+                        btnAnswerLetter.get(finalI).setStyle("-fx-background-color: #f34624; -fx-background-radius: 100%; -fx-pref-width: 60px; -fx-pref-height: 60px");
                     }
+                    btnsQ.get(currentQuestion).setDisable(true);
                 }
             });
         }
