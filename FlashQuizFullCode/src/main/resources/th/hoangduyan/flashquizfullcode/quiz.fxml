@@ -96,7 +96,10 @@
     </Pane>
     <Pane layoutX="291.0" prefHeight="570.0" prefWidth="680.0" style="-fx-background-color: white; -fx-background-radius: 5px;">
       <children>
-        <TextArea fx:id="questionBoard" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="651.0" style="-fx-border-color: black; -fx-border-radius: 10px;" />
+        <TextArea fx:id="questionBoard" disable="true" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="651.0" style="-fx-border-color: black; -fx-border-radius: 10px;" text="Câu hỏi ở đây" wrapText="true">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font></TextArea>
         <GridPane fx:id="answerGrid" layoutX="14.0" layoutY="237.0" prefHeight="272.0" prefWidth="561.0">
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="276.20001220703125" minWidth="10.0" prefWidth="63.999951171875" />
