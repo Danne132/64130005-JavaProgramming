@@ -75,6 +75,7 @@ public class QuizController implements Initializable {
                     }else{
                         btnAnswer.get(finalI).setStyle("-fx-background-color: #f34624; -fx-background-radius: 10px;");
                         btnAnswerLetter.get(finalI).setStyle("-fx-background-color: #f34624; -fx-background-radius: 100%; -fx-pref-width: 60px; -fx-pref-height: 60px");
+                        setColorAnswerRight();
                     }
                     btnsQ.get(currentQuestion).setDisable(true);
                 }
@@ -119,5 +120,15 @@ public class QuizController implements Initializable {
         if(btnAnswer.get(index).getText() == questions.get(currentQuestion).getCorrectAnswer())
             return true;
         return false;
+    }
+
+    private void setColorAnswerRight(){
+        List<String> answer = questions.get(currentQuestion).getAnswers();
+        for(int i = 0; i < btnAnswer.size(); i++){
+            if(answer.get(i) == questions.get(currentQuestion).getCorrectAnswer()){
+                btnAnswer.get(i).setStyle("-fx-background-color: #afef8f; -fx-background-radius: 10px;");
+                btnAnswerLetter.get(i).setStyle("-fx-background-color:#afef8f; -fx-background-radius: 100%; -fx-pref-width: 60px; -fx-pref-height: 60px");
+            }
+        }
     }
 }
