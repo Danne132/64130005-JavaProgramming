@@ -81,7 +81,6 @@ public class QuizController implements Initializable {
             });
         }
     }
-
     private void initialQuestion(){
         questions = new ArrayList<>(Arrays.asList(
                 new Question("What is the size of an int in Java?", "4 bytes", Arrays.asList("1 byte", "2 bytes", "4 bytes", "8 bytes")),
