@@ -14,22 +14,13 @@ import java.util.ResourceBundle;
 
 public class DictionaryController implements Initializable {
     @FXML
-    private Label nghiaTxt;
+    private AnchorPane addLayout;
 
     @FXML
-    private Label phienAmTxt;
+    private TextField adverbAdd;
 
     @FXML
-    private Button timBtn;
-
-    @FXML
-    private Label wordFind;
-
-    @FXML
-    private TextField tuDichTxt;
-
-    @FXML
-    private Label loaiTuTxt;
+    private TextField exampleAdd;
 
     @FXML
     private Label exampleTxt;
@@ -38,7 +29,35 @@ public class DictionaryController implements Initializable {
     private AnchorPane findLayout;
 
     @FXML
-    private AnchorPane addLayout;
+    private Label loaiTuTxt;
+
+    @FXML
+    private TextField meaningAdd;
+
+    @FXML
+    private Label nghiaTxt;
+
+    @FXML
+    private Label phienAmTxt;
+
+    @FXML
+    private Button themTu;
+
+    @FXML
+    private Button timBtn;
+
+    @FXML
+    private TextField transcriptionAdd;
+
+    @FXML
+    private TextField tuDichTxt;
+
+    @FXML
+    private TextField wordAdd;
+
+    @FXML
+    private Label wordFind;
+
 
     private HashMap<String, DictionaryValue> translate = new HashMap<>();
     private boolean open;
@@ -86,5 +105,15 @@ public class DictionaryController implements Initializable {
         open = !open;
         findLayout.setVisible(open);
         addLayout.setVisible(!open);
+    }
+
+    public void addWord(ActionEvent event) {
+        String newWord = wordAdd.getText().trim().toLowerCase().toString();
+        String adv = adverbAdd.getText().trim().toLowerCase().toString();
+        String trans = transcriptionAdd.getText().trim().toLowerCase().toString();
+        String meaning = meaningAdd.getText().trim().toLowerCase().toString();
+        String example = exampleAdd.getText().trim().toLowerCase().toString();
+        DictionaryValue dic = new DictionaryValue(trans, meaning, adv, example);
+        translate.put(newWord, dic);
     }
 }

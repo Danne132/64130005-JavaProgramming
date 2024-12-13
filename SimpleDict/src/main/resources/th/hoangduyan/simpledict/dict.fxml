@@ -68,31 +68,31 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="wordAddTxt" layoutX="14.0" layoutY="36.0" prefHeight="26.0" prefWidth="250.0" />
+            <TextField fx:id="wordAdd" layoutX="14.0" layoutY="36.0" prefHeight="26.0" prefWidth="250.0" />
             <Label layoutX="15.0" layoutY="76.0" text="Adverb">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="adverbTxt" layoutX="15.0" layoutY="98.0" prefHeight="26.0" prefWidth="250.0" />
+            <TextField fx:id="adverbAdd" layoutX="15.0" layoutY="98.0" prefHeight="26.0" prefWidth="250.0" />
             <Label layoutX="15.0" layoutY="141.0" text="Transcription">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="transcriptionTxt" layoutX="15.0" layoutY="163.0" prefHeight="26.0" prefWidth="250.0" />
+            <TextField fx:id="transcriptionAdd" layoutX="15.0" layoutY="163.0" prefHeight="26.0" prefWidth="250.0" />
             <Label layoutX="15.0" layoutY="209.0" text="Meaning">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="meaningTxt" layoutX="15.0" layoutY="231.0" prefHeight="26.0" prefWidth="250.0" />
+            <TextField fx:id="meaningAdd" layoutX="15.0" layoutY="231.0" prefHeight="26.0" prefWidth="250.0" />
             <Label layoutX="15.0" layoutY="274.0" text="Example">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="exampleTxt" layoutX="15.0" layoutY="296.0" prefHeight="26.0" prefWidth="250.0" />
+            <TextField fx:id="exampleAdd" layoutX="15.0" layoutY="296.0" prefHeight="26.0" prefWidth="250.0" />
             <Button layoutX="121.0" layoutY="348.0" mnemonicParsing="false" onAction="#addWord" text="Add" />
          </children>
       </AnchorPane>
