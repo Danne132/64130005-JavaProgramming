@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ public class QuizController implements Initializable {
     @FXML
     Button btnA, btnB, btnC, btnD, btnaA, btnaB, btnaC, btnaD;
     @FXML
-    TextArea questionBoard;
+    Text questionBoard;
     @FXML
     TextField point;
     List<Button> btnsQ;
@@ -84,16 +85,16 @@ public class QuizController implements Initializable {
     }
     private void initialQuestion(){
         questions = new ArrayList<>(Arrays.asList(
-                new Question("What is the size of an int in Java?", "4 bytes", Arrays.asList("1 byte", "2 bytes", "4 bytes", "8 bytes")),
-                new Question("Which operator is used to allocate memory dynamically in C++?", "new", Arrays.asList("malloc", "new", "alloc", "allocate")),
-                new Question("What is the default return type of the main function in C++?", "int", Arrays.asList("void", "int", "float", "double")),
-                new Question("How are blocks defined in Python?", "Indentation", Arrays.asList("Curly braces", "Parentheses", "Indentation", "Semicolon")),
-                new Question("What is the default value of a boolean in Java?", "false", Arrays.asList("true", "false", "null", "0")),
-                new Question("Which method is used to start a thread in Java?", "start()", Arrays.asList("run()", "start()", "execute()", "init()")),
-                new Question("Which keyword is used to inherit a class in Java?", "extends", Arrays.asList("extends", "implements", "inherit", "base")),
-                new Question("What does JVM stand for?", "Java Virtual Machine", Arrays.asList("Java Version Manager", "Java Virtual Machine", "Java Visual Model", "Java Variable Manager")),
-                new Question("What is the output of `sizeof(char)` in C++?", "1", Arrays.asList("1", "2", "4", "8")),
-                new Question("Which of these is a mutable data type in Python?", "list", Arrays.asList("tuple", "str", "list", "int"))
+                new Question("What is the size of an int in Java?", "4 bytes", Arrays.asList("1 byte", "2 bytes", "4 bytes", "8 bytes"), ""),
+                new Question("Which operator is used to allocate memory dynamically in C++?", "new", Arrays.asList("malloc", "new", "alloc", "allocate"), ""),
+                new Question("What is the default return type of the main function in C++?", "int", Arrays.asList("void", "int", "float", "double"), ""),
+                new Question("How are blocks defined in Python?", "Indentation", Arrays.asList("Curly braces", "Parentheses", "Indentation", "Semicolon"), ""),
+                new Question("What is the default value of a boolean in Java?", "false", Arrays.asList("true", "false", "null", "0"), ""),
+                new Question("Which method is used to start a thread in Java?", "start()", Arrays.asList("run()", "start()", "execute()", "init()"), ""),
+                new Question("Which keyword is used to inherit a class in Java?", "extends", Arrays.asList("extends", "implements", "inherit", "base"), ""),
+                new Question("What does JVM stand for?", "Java Virtual Machine", Arrays.asList("Java Version Manager", "Java Virtual Machine", "Java Visual Model", "Java Variable Manager"), ""),
+                new Question("What is the output of `sizeof(char)` in C++?", "1", Arrays.asList("1", "2", "4", "8"), ""),
+                new Question("Which of these is a mutable data type in Python?", "list", Arrays.asList("tuple", "str", "list", "int"), "")
         ));
     }
 

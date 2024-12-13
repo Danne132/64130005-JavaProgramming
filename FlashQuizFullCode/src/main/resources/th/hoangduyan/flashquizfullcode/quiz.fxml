@@ -3,13 +3,15 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="971.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="th.hoangduyan.flashquizfullcode.QuizController">
   <children>
@@ -96,14 +98,10 @@
     </Pane>
     <Pane layoutX="291.0" prefHeight="570.0" prefWidth="680.0" style="-fx-background-color: white; -fx-background-radius: 5px;">
       <children>
-        <TextArea fx:id="questionBoard" disable="true" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="651.0" style="-fx-border-color: black; -fx-border-radius: 10px;" text="Câu hỏi ở đây" wrapText="true">
-               <font>
-                  <Font name="System Bold Italic" size="20.0" />
-               </font></TextArea>
-        <GridPane fx:id="answerGrid" layoutX="14.0" layoutY="237.0" prefHeight="272.0" prefWidth="561.0">
+        <GridPane fx:id="answerGrid" layoutX="14.0" layoutY="237.0" prefHeight="272.0" prefWidth="481.0">
           <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="276.20001220703125" minWidth="10.0" prefWidth="63.999951171875" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="505.600048828125" minWidth="10.0" prefWidth="497.600048828125" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="276.20001220703125" minWidth="10.0" prefWidth="67.4000244140625" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="505.600048828125" minWidth="10.0" prefWidth="413.7999755859375" />
           </columnConstraints>
           <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -163,6 +161,16 @@
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></TextField>
+            <AnchorPane layoutX="9.0" layoutY="14.0" prefHeight="200.0" prefWidth="665.0" style="-fx-border-color: black; -fx-border-radius: 10px;">
+               <children>
+                  <Text fx:id="questionBoard" layoutX="268.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Câu hỏi ở đây">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="quesImg" fitHeight="150.0" fitWidth="150.0" layoutX="257.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
       </children>
     </Pane>
   </children>
