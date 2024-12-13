@@ -7,32 +7,94 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="th.hoangduyan.simpledict.DictionaryController">
-  <children>
-    <AnchorPane prefHeight="71.0" prefWidth="350.0" style="-fx-background-color: #1D93F3;">
-      <children>
-        <Label alignment="CENTER" layoutX="34.0" layoutY="12.0" prefHeight="47.0" prefWidth="282.0" text="Từ điển tiếng Anh" textFill="WHITE">
-          <font>
-            <Font name="System Bold" size="25.0" />
-          </font>
-        </Label>
-      </children>
-    </AnchorPane>
-    <TextField fx:id="tuDichTxt" layoutX="100.0" layoutY="130.0" />
-    <Label layoutX="119.0" layoutY="99.0" text="Bạn hãy nhập từ dịch" />
-    <Button fx:id="timBtn" layoutX="157.0" layoutY="170.0" mnemonicParsing="false" onAction="#translate" text="Tìm" />
-    <Label layoutX="40.0" layoutY="226.0" text="Phiên âm" />
-    <Label fx:id="phienAmTxt" layoutX="35.0" layoutY="260.0">
-      <font>
-        <Font size="20.0" />
-      </font>
-    </Label>
-    <Label layoutX="39.0" layoutY="313.0" text="Nghĩa tiếng Việt" />
-    <Label fx:id="nghiaTxt" layoutX="35.0" layoutY="354.0">
-      <font>
-        <Font size="20.0" />
-      </font>
-    </Label>
-    <Button fx:id="themTu" layoutX="263.0" layoutY="471.0" mnemonicParsing="false" onAction="#themTuDich" text="Thêm" />
-  </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="th.hoangduyan.simpledict.DictionaryController">
+   <children>
+      <AnchorPane fx:id="findLayout" layoutX="26.0" layoutY="90.0" prefHeight="399.0" prefWidth="297.0" style="-fx-border-color: #1D93F3;" visible="false">
+         <children>
+            <Label fx:id="nghiaTxt" layoutX="14.0" layoutY="175.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="timBtn" layoutX="244.0" layoutY="43.0" mnemonicParsing="false" onAction="#translate" text="Find" />
+            <Label fx:id="phienAmTxt" layoutX="14.0" layoutY="116.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="wordFind" layoutX="14.0" layoutY="80.0">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="14.0" text="Write your word here">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="loaiTuTxt" alignment="CENTER_RIGHT" layoutX="246.0" layoutY="87.0" textAlignment="RIGHT">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="147.0" text="Meaning">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tuDichTxt" layoutX="14.0" layoutY="42.0" prefHeight="26.0" prefWidth="214.0" />
+            <Label layoutX="14.0" layoutY="214.0" text="Example">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="exampleTxt" layoutX="14.0" layoutY="244.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="71.0" prefWidth="350.0" style="-fx-background-color: #1D93F3;">
+         <children>
+            <Label alignment="CENTER" layoutX="34.0" layoutY="12.0" prefHeight="47.0" prefWidth="282.0" text="English Dictionary" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button fx:id="themTu" layoutX="299.0" layoutY="505.0" mnemonicParsing="false" onAction="#themTuDich" text="+" />
+      <AnchorPane fx:id="addLayout" layoutX="34.0" layoutY="90.0" prefHeight="399.0" prefWidth="281.0" style="-fx-border-color: #1D93F3;" AnchorPane.bottomAnchor="110.80000000000001" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="35.599999999999966" AnchorPane.topAnchor="90.0">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Word add">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="wordAddTxt" layoutX="14.0" layoutY="36.0" prefHeight="26.0" prefWidth="250.0" />
+            <Label layoutX="15.0" layoutY="76.0" text="Adverb">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="adverbTxt" layoutX="15.0" layoutY="98.0" prefHeight="26.0" prefWidth="250.0" />
+            <Label layoutX="15.0" layoutY="141.0" text="Transcription">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="transcriptionTxt" layoutX="15.0" layoutY="163.0" prefHeight="26.0" prefWidth="250.0" />
+            <Label layoutX="15.0" layoutY="209.0" text="Meaning">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="meaningTxt" layoutX="15.0" layoutY="231.0" prefHeight="26.0" prefWidth="250.0" />
+            <Label layoutX="15.0" layoutY="274.0" text="Example">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="exampleTxt" layoutX="15.0" layoutY="296.0" prefHeight="26.0" prefWidth="250.0" />
+            <Button layoutX="121.0" layoutY="348.0" mnemonicParsing="false" onAction="#addWord" text="Add" />
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>

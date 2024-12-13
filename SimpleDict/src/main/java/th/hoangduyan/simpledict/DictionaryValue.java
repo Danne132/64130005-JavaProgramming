@@ -1,11 +1,13 @@
 package th.hoangduyan.simpledict;
 
 public class DictionaryValue {
-    String phienAm, nghiaTiengViet;
+    String phienAm, nghiaTiengViet, loaiTu, viDu;
 
-    public DictionaryValue(String phienAm, String nghiaTiengViet) {
+    public DictionaryValue(String phienAm, String nghiaTiengViet, String loaiTu, String viDu) {
         this.phienAm = phienAm;
         this.nghiaTiengViet = nghiaTiengViet;
+        this.loaiTu = loaiTu;
+        this.viDu = viDu;
     }
 
     public String getPhienAm() {
@@ -22,5 +24,21 @@ public class DictionaryValue {
 
     public void setNghiaTiengViet(String nghiaTiengViet) {
         this.nghiaTiengViet = nghiaTiengViet;
+    }
+
+    public String getLoaiTu() {
+        return loaiTu;
+    }
+
+    public void setLoaiTu(String loaiTu) {
+        this.loaiTu = loaiTu;
+    }
+
+    public String getViDu() {
+        return viDu;
+    }
+
+    public void setViDu(String viDu) {
+        this.viDu = viDu;
     }
 }
