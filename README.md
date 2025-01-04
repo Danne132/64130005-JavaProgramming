@@ -1,6 +1,8 @@
 # JAVA PROGRAMING
 ## HOÀNG DUY AN
+
 ### My profile:
+![bc638a35af294c58d456cd6f9280b00c](https://github.com/user-attachments/assets/56320d47-38af-4104-a82d-afc83df14327)
 * **🗓 Date of Birth**: 13/10/2004
 * **🧑 Gender**       : male
 * **🏤 Study at**     : Nha Trang University
@@ -8,11 +10,7 @@
 ### Contact:
 * [D AN Hoàng](https://www.facebook.com/hoangduyan2004)
 ## Kết quả một số bài tập đã làm
-#### 1. Bài tập BMI
-- Kết quả bài tập:
-![image](https://github.com/user-attachments/assets/790238aa-1130-40e1-bc68-47620d654c45)
-
-#### 1. Bài tập kết nối database
+### Bài tập kết nối database
 - Sử dụng MySQL để tạo database
 - Lệnh kết nối và sử dụng database
   ```
@@ -36,6 +34,24 @@
 - Ngoài ra chương trình còn có chức năng thêm dữ liệu
 - Kết quả bài tập:
 ![image](https://github.com/user-attachments/assets/1eefc647-586d-4a94-bb17-e4cb021705ea)
+
+### Bài tập JSON dùng thư viện GSON
+- ✍ Code chương trình
+```
+FileWriter writer = new FileWriter("output_gson.json");
+try {
+	gson.toJson(obj, writer);
+	System.out.println("File JSON đã được tạo thành công với Gson!");
+	String jsonString = gson.toJson(obj);
+	System.out.println("Chuỗi JSON: ");
+	System.out.println(jsonString);
+} finally {
+	if (writer != null) {
+		 writer.close();
+	}
+}
+```
+
 ### Bài tập từ điển: Bài tập này sử dụng Hashmap để thực hiện việc tìm kiếm từ cần dịch
 |Kết quả chương trình|Dịch từ|Thêm từ dịch|
 |:-------------------|:------|:-----------|
@@ -50,6 +66,15 @@
 |Kết quả chương trình|Kết quả chương trình|Kết quả chương trình|
 |:-------------------|:-------------------|:-------------------|
 |![image](https://github.com/user-attachments/assets/9f84c882-f9b9-42b4-be2f-c5bb9ec46523)|![image](https://github.com/user-attachments/assets/d22ea254-015a-4465-9729-27398e00da9d)|![image](https://github.com/user-attachments/assets/ad1c23d2-7729-4229-9568-7e8da175bef4)|
+
+### Bài tập tính toán đơn giản
+|Kết quả phép cộng|Kế quả phép trừ|Kết quả phép nhân|Kết quả phép chia|
+:-----------------|:--------------|:----------------|:----------------|
+|![image](https://github.com/user-attachments/assets/17cf1980-2ad1-4c73-bd29-629e4a615677)|![image](https://github.com/user-attachments/assets/91221aed-c400-46e3-806d-0a7c28c189eb)|![image](https://github.com/user-attachments/assets/c6e86c8c-38ee-43c1-9904-eb60706a5d78)|![image](https://github.com/user-attachments/assets/688e0646-22c0-4560-8b99-b1f20253956f)|
+
+
+
+
 
 
 
