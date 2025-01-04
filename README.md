@@ -51,6 +51,27 @@ try {
 	}
 }
 ```
+### Bài tập RSS
+- ✍ Code chương trình
+```
+String feedUrl = "https://vnexpress.net/rss/tin-moi-nhat.rss";
+URI uri = new URI(feedUrl);
+URL url = uri.toURL();
+XmlReader reader = new XmlReader(url);
+SyndFeed feed = (new SyndFeedInput()).build(reader);
+System.out.println("Feed Title: " + feed.getTitle());
+System.out.println("Feed Description: " + feed.getDescription());
+System.out.println("-----------------------------------------------------");
+List<SyndEntry> entries = feed.getEntries();
+Iterator var8 = entries.iterator();
+while(var8.hasNext()) {
+	SyndEntry entry = (SyndEntry)var8.next();
+	System.out.println("Title: " + entry.getTitle());
+	System.out.println("Link: " + entry.getLink());
+	System.out.println("Published Date: " + entry.getPublishedDate());
+	System.out.println("-----------------------------------------------------");
+}
+```
 
 ### Bài tập từ điển: Bài tập này sử dụng Hashmap để thực hiện việc tìm kiếm từ cần dịch
 |Kết quả chương trình|Dịch từ|Thêm từ dịch|
